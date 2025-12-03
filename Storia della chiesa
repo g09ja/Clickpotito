@@ -7,3 +7,294 @@
 
 **Note:**
 Modifiche salvate nel database WordPress; nessun file del tema aggiornato.
+/* Sfondo generale con overlay gradiente bianco */
+.page-id-10 {
+    position: relative;
+    background-image: url("https://www.clickpotito.com/wp-content/uploads/2025/12/AbsidePotito.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Overlay bianco gradiente */
+.page-id-10:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    z-index: 1;
+}
+
+/* Contenuto sopra l'overlay */
+.page-id-10 > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Testo leggibile sopra overlay bianco */
+.page-id-10,
+.page-id-10 p,
+.page-id-10 h1,
+.page-id-10 h2,
+.page-id-10 h3,
+.page-id-10 h4,
+.page-id-10 h5,
+.page-id-10 h6,
+.page-id-10 li,
+.page-id-10 a,
+.page-id-10 span,
+.page-id-10 strong,
+.page-id-10 em {
+    color: #540b0e !important;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* ANIMAZIONI AUTOMATICHE AL CARICAMENTO */
+
+/* Titolo principale H1 */
+.page-id-10 h1.wp-block-heading.has-text-align-center {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: titleEntrance 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation-delay: 0.3s;
+    font-size: 5rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Contenuto principale */
+.page-id-10 .wp-block-post-content {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: contentEntrance 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Paragrafi con animazioni scaglionate */
+.page-id-10 .wp-block-post-content p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: paragraphEntrance 0.8s ease-out forwards;
+}
+
+/* Delay progressivo per paragrafi */
+.page-id-10 .wp-block-post-content p:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.page-id-10 .wp-block-post-content p:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.page-id-10 .wp-block-post-content p:nth-child(3) {
+    animation-delay: 1.0s;
+}
+
+.page-id-10 .wp-block-post-content p:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.page-id-10 .wp-block-post-content p:nth-child(5) {
+    animation-delay: 1.4s;
+}
+
+.page-id-10 .wp-block-post-content p:nth-child(6) {
+    animation-delay: 1.6s;
+}
+
+/* Titoli H2 con animazione */
+.page-id-10 h2.wp-block-heading {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleEntrance 0.8s ease-out forwards;
+}
+
+.page-id-10 h2.wp-block-heading:nth-of-type(1) {
+    animation-delay: 0.7s;
+}
+
+.page-id-10 h2.wp-block-heading:nth-of-type(2) {
+    animation-delay: 1.1s;
+}
+
+.page-id-10 h2.wp-block-heading:nth-of-type(3) {
+    animation-delay: 1.5s;
+}
+
+.page-id-10 h2.wp-block-heading:nth-of-type(4) {
+    animation-delay: 1.9s;
+}
+
+/* Animazione per immagini */
+.page-id-10 .wp-block-image {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: scaleIn 1s ease-out forwards;
+    animation-delay: 0.9s;
+}
+
+/* Fascia orizzontale gialla */
+.page-id-10:before {
+    content: "";
+    position: absolute;
+    top: 720px;
+    left: 0;
+    right: 0;
+    height: 450px;
+    background-color: #fff3b0;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUpFade 1s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+/* Effetto fluttuante continuo per elementi speciali */
+.float-element {
+    animation: floatEffect 4s ease-in-out infinite;
+}
+
+/* Scroll reveal con solo CSS (funziona al caricamento) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* KEYFRAMES */
+@keyframes titleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateY(5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes contentEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes paragraphEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animazione di sfondo per la pagina */
+@keyframes backgroundFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.page-id-10 {
+    animation: backgroundFadeIn 1.5s ease-out;
+}
+
+/* Effetto di dissolvenza per transizioni smooth */
+.fade-in-element {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Effetto di ingresso dall'alto per sezioni */
+.section-enter {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: sectionEnter 0.9s ease-out forwards;
+}
+
+@keyframes sectionEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+    .page-id-10 h1.wp-block-heading.has-text-align-center {
+        font-size: 3rem;
+        animation-duration: 1s;
+    }
+    
+    .page-id-10 .wp-block-post-content p {
+        animation-duration: 0.6s;
+    }
+    
+    .page-id-10:before {
+        height: 300px;
+        top: 600px;
+    }
+}
+Aggiunto CSS per pagina San Potito con overlay, fascia e animazione
